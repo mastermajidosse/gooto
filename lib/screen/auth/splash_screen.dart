@@ -4,7 +4,7 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 // import 'package:internet_connection_checker/internet_connection_checker/art';
 import 'package:gooto/bloc/feed/feed_cubit.dart';
 import 'package:gooto/screen/bottom_tab.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 class SplashScreen extends StatefulWidget {
   static const routeName = 'Splash';
@@ -66,7 +66,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                 ],
               ),
-              Mystyle.loadingWidget3(colo: Colors.white)
+              MyStyle.loadingWidget3(colo: Colors.white)
             ],
           ),
         ),

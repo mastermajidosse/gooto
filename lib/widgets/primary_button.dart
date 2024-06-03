@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 class PrimaryButton extends StatelessWidget {
   bool mybool;
@@ -17,10 +17,10 @@ class PrimaryButton extends StatelessWidget {
       child: Container(
         width: double.infinity,
         child: mybool
-            ? Mystyle.loadingWidget()
+            ? MyStyle.loadingWidget()
             : TextButton(
                 style: TextButton.styleFrom(
-                  backgroundColor: white ? Colors.white : Mystyle.primarycolo,
+                  backgroundColor: white ? Colors.white : MyStyle.primarycolo,
                   padding: EdgeInsets.only(top: 6.w, bottom: 6.w),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100.0),
@@ -28,7 +28,9 @@ class PrimaryButton extends StatelessWidget {
                 ),
                 child: Text(
                   texts,
-                  style: white ? Mystyle.blackCatTextStyle : Mystyle.buttwhtieTextStylereal,
+                  style: white
+                      ? MyStyle.blackCatTextStyle
+                      : MyStyle.buttwhtieTextStylereal,
                 ),
                 onPressed: () {
                   myfunction();

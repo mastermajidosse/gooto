@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 import 'package:gooto/utils/step.dart';
 
 class RulesScreen extends StatelessWidget {
@@ -7,7 +7,7 @@ class RulesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Mystyle.bgcolor,
+        backgroundColor: MyStyle.bgcolor,
         body: Directionality(
           textDirection: TextDirection.rtl,
           child: ListView(
@@ -18,9 +18,11 @@ class RulesScreen extends StatelessWidget {
                 children: [
                   Text(
                     "رؤية ".toUpperCase(),
-                    style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600),
+                    style:
+                        TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600),
                   ),
-                  Directionality(textDirection: TextDirection.ltr, child: BackButton()),
+                  Directionality(
+                      textDirection: TextDirection.ltr, child: BackButton()),
                 ],
               ),
               SizedBox(height: 16.0),

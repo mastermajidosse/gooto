@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gooto/bloc/video/video_cubit.dart';
 import 'package:gooto/models/video_model.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class VideoDetails extends StatefulWidget {
@@ -23,7 +23,7 @@ class _VideoDetailsState extends State<VideoDetails> {
   Widget build(BuildContext context) {
     return BlocBuilder<VideoCubit, VideoState>(builder: (context, state) {
       if (state.loading == true) {
-        return Center(child: Mystyle.loadingWidget());
+        return Center(child: MyStyle.loadingWidget());
       } else if (state.loading == false) {
         return ListView.builder(
           physics: NeverScrollableScrollPhysics(),
@@ -100,7 +100,7 @@ class OneVid extends StatelessWidget {
               width: 300,
               child: Text(
                 posts.name.toString(),
-                style: Mystyle.blackCatTextStyle.copyWith(
+                style: MyStyle.blackCatTextStyle.copyWith(
                   height: 1.0,
                 ),
                 maxLines: 2,

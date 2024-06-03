@@ -6,7 +6,7 @@ import 'package:gooto/screen/feed/save_screen.dart';
 import 'package:gooto/screen/others/store_screen.dart';
 import 'package:gooto/screen/profile/setting_screen.dart';
 import 'package:gooto/screen/videos/videos_screen.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 class BottomTabBarr extends StatefulWidget {
   static const routeName = 'bottomtab';
@@ -52,7 +52,8 @@ class _BottomTabBarrState extends State<BottomTabBarr> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 costumcollum(Icons.home, Icons.home_outlined, 0),
-                costumcollum(FontAwesomeIcons.youtube, FontAwesomeIcons.youtube, 1),
+                costumcollum(
+                    FontAwesomeIcons.youtube, FontAwesomeIcons.youtube, 1),
                 costumcollum(Icons.article, Icons.article_outlined, 2),
                 costumcollum(Icons.store, Icons.store_outlined, 3),
                 costumcollum(Icons.person, Icons.person_outline, 4),
@@ -75,8 +76,10 @@ class _BottomTabBarrState extends State<BottomTabBarr> {
         child: Icon(
           _selectedIndex == numb ? ico : txt,
           size: _selectedIndex == numb ? 32 : 28,
-          color: _selectedIndex == numb ? Colors.black : Mystyle.textqcolor.withOpacity(.6),
-          // color: Mystyle.primarycolo,
+          color: _selectedIndex == numb
+              ? Colors.black
+              : MyStyle.textqcolor.withOpacity(.6),
+          // color: MyStyle.primarycolo,
         ),
       ),
     );

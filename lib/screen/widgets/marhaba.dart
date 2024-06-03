@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class Marhaba extends StatelessWidget {
@@ -20,7 +20,7 @@ class Marhaba extends StatelessWidget {
           padding: EdgeInsets.all(16),
           child: Text(
             " مرحبا بك ، ",
-            style: Mystyle.dashTextStyle.copyWith(fontSize: 18),
+            style: MyStyle.dashTextStyle.copyWith(fontSize: 18),
           ),
         ),
         Padding(

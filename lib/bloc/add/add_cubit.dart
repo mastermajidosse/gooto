@@ -7,7 +7,7 @@ import 'package:gooto/models/blog_model.dart';
 import 'package:gooto/models/post_model.dart';
 import 'package:gooto/screen/bottom_tab.dart';
 import 'package:gooto/services/service/posts_repo.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 part 'add_state.dart';
 
@@ -26,12 +26,13 @@ class AddCubit extends Cubit<AddState> {
       emit(Addarticledone());
       Navigator.pushNamed(context, BottomTabBarr.routeName);
     } catch (e) {
-      Mystyle.err(sc, e.toString());
+      MyStyle.err(sc, e.toString());
       emit(AddarticleError(e.toString()));
     }
   }
 
-  Future submitPostArticles(BuildContext context, sc, BlogModel myarticle) async {
+  Future submitPostArticles(
+      BuildContext context, sc, BlogModel myarticle) async {
     emit(AddarticleLoading());
     print("------submit myarticle----");
 
@@ -41,7 +42,7 @@ class AddCubit extends Cubit<AddState> {
       emit(Addarticledone());
       // Navigator.pushNamed(context, BottomTabBarr.routeName);
     } catch (e) {
-      // Mystyle.err(sc, e.toString());
+      // MyStyle.err(sc, e.toString());
       emit(AddarticleError(e.toString()));
     }
   }

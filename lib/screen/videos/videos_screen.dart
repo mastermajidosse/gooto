@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:gooto/bloc/feed/feed_cubit.dart';
 import 'package:gooto/screen/videos/video_more.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 class VideosScreen extends StatefulWidget {
   const VideosScreen({super.key});
@@ -32,7 +32,7 @@ class _VideosScreenState extends State<VideosScreen> {
             alignment: Alignment.center,
             child: Text(
               "فيديوهات",
-              style: Mystyle.dashTextStyle.copyWith(
+              style: MyStyle.dashTextStyle.copyWith(
                 fontSize: ScreenUtil().setSp(18),
                 fontFamily: "arial",
                 color: Colors.white,
@@ -45,7 +45,8 @@ class _VideosScreenState extends State<VideosScreen> {
           textDirection: TextDirection.rtl,
           child: RefreshIndicator(
               onRefresh: () {
-                return Future.wait([BlocProvider.of<FeedCubit>(context).topPosts()]);
+                return Future.wait(
+                    [BlocProvider.of<FeedCubit>(context).topPosts()]);
               },
               child:
                   // BlocBuilder<FeedCubit, FeedState>(
@@ -57,14 +58,14 @@ class _VideosScreenState extends State<VideosScreen> {
                     padding: EdgeInsets.symmetric(horizontal: 16),
                     child: Text(
                       "فيديوات هدا الأسبوع",
-                      style: Mystyle.subtitleTextStyle,
+                      style: MyStyle.subtitleTextStyle,
                     ),
                   ),
                   // Padding(
                   //   padding: EdgeInsets.symmetric(horizontal: 16),
                   //   child: Text(
                   //     "المغرب",
-                  //     style: Mystyle.dash13TextStyle,
+                  //     style: MyStyle.dash13TextStyle,
                   //   ),
                   // ),
                   VideoDetails(),

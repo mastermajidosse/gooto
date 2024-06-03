@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gooto/screen/auth/login_screen.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 class SignupProfileScreen extends StatefulWidget {
   static const routeName = 'profile';
@@ -48,18 +48,19 @@ class _SignupProfileScreenState extends State<SignupProfileScreen> {
                 height: 39.w,
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    backgroundColor: Mystyle.secondcolo,
+                    backgroundColor: MyStyle.secondcolo,
                     // shape: RoundedRectangleBorder(
                     //   borderRadius: BorderRadius.circular(100.0),
                     // ),
                   ),
                   child: Text(
                     "تسجيل الدخول",
-                    style: Mystyle.subtitleTextStyle.copyWith(fontSize: 15),
+                    style: MyStyle.subtitleTextStyle.copyWith(fontSize: 15),
                     textAlign: TextAlign.center,
                   ),
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, LoginPage.routeName);
+                    Navigator.pushReplacementNamed(
+                        context, LoginPage.routeName);
                   },
                 ),
               ),

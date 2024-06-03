@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 class ImageFrameDisplay extends StatefulWidget {
   String? image;
@@ -17,7 +17,7 @@ class _ImageFrameDisplayState extends State<ImageFrameDisplay> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          color: Mystyle.textlinkcolor,
+          color: MyStyle.textlinkcolor,
           width: 1,
         ),
       ),
@@ -27,14 +27,14 @@ class _ImageFrameDisplayState extends State<ImageFrameDisplay> {
           ? Text(
               'No Image',
               style: TextStyle(
-                color: Mystyle.textlinkcolor,
+                color: MyStyle.textlinkcolor,
                 height: 1.6,
               ),
             )
           : Container(
               decoration: BoxDecoration(
                   border: Border.all(
-                    color: Mystyle.textlinkcolor,
+                    color: MyStyle.textlinkcolor,
                     width: 2,
                   ),
                   image: DecorationImage(

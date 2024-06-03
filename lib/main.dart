@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gooto/bloc/bproviders.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
+import 'screen/feed/home_screen.dart';
 import 'utils/route_genetator.dart' as router;
-import 'package:gooto/screen/auth/login_screen.dart';
+// import 'package:gooto/screen/auth/login_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp(this.flavor, {super.key});
@@ -21,12 +22,13 @@ class MyApp extends StatelessWidget {
             title: 'ultras',
             theme: ThemeData(
               visualDensity: VisualDensity.adaptivePlatformDensity,
-              primaryColor: Mystyle.primarycolo,
+              primaryColor: MyStyle.primarycolo,
             ),
             debugShowCheckedModeBanner: false,
-            onGenerateRoute: router.RoutGenerator.generateRout,
-            initialRoute: router.initialRoute,
+            // onGenerateRoute: router.RoutGenerator.generateRout,
+            // initialRoute: router.initialRoute,
             // home: LoginPage(),
+            home: HomeScreen(),
           );
         },
       ),

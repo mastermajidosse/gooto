@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 class ImageFrame extends StatefulWidget {
   File? image;
@@ -19,7 +19,7 @@ class _ImageFrameState extends State<ImageFrame> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(100),
         border: Border.all(
-          color: Mystyle.textlinkcolor,
+          color: MyStyle.textlinkcolor,
           width: 1,
         ),
       ),
@@ -32,13 +32,13 @@ class _ImageFrameState extends State<ImageFrame> {
                 // SvgPicture.asset(
                 //   "assets/Icons/cloud-computing.svg",
                 //   height: ScreenUtil().setHeight(57),
-                //   color: Mystyle.textlinkcolor
+                //   color: MyStyle.textlinkcolor
                 //       .withOpacity(.3), // Color(0xFFe3f9ff),
                 // ),
                 SizedBox(height: ScreenUtil().setHeight(12)),
                 Text.rich(
                   TextSpan(
-                    style: Mystyle.regularTextStyle.copyWith(
+                    style: MyStyle.regularTextStyle.copyWith(
                       fontSize: ScreenUtil().setSp(10),
                     ),
                     children: [
@@ -48,13 +48,14 @@ class _ImageFrameState extends State<ImageFrame> {
                       TextSpan(
                         text: 'Browse',
                         style: TextStyle(
-                          color: Mystyle.textlinkcolor,
+                          color: MyStyle.textlinkcolor,
                           height: 1.6,
                         ),
                       ),
                     ],
                   ),
-                  textHeightBehavior: TextHeightBehavior(applyHeightToFirstAscent: false),
+                  textHeightBehavior:
+                      TextHeightBehavior(applyHeightToFirstAscent: false),
                   textAlign: TextAlign.center,
                 ),
               ],
@@ -63,7 +64,7 @@ class _ImageFrameState extends State<ImageFrame> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100),
                   border: Border.all(
-                    color: Mystyle.textlinkcolor,
+                    color: MyStyle.textlinkcolor,
                     width: 2,
                   ),
                   image: DecorationImage(

@@ -5,7 +5,7 @@ import 'package:gooto/bloc/auth/login_cubit.dart';
 import 'package:gooto/screen/app_start_screen.dart';
 import 'package:gooto/screen/auth/register_screen.dart';
 import 'package:gooto/screen/bottom_tab.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 import 'package:gooto/widgets/input_text.dart';
 import 'package:gooto/widgets/primary_button.dart';
 
@@ -28,7 +28,8 @@ class LoginPage extends StatelessWidget {
         body: BlocConsumer<LoginCubit, LoginState>(
           listener: (context, state) {
             if (state is LoginError) {
-              return Mystyle.err(ScaffoldMessenger.of(context).showSnackBar, state.message);
+              return MyStyle.err(
+                  ScaffoldMessenger.of(context).showSnackBar, state.message);
             } else if (state is LoginSuccess) {
               print("brace you gonna login");
 
@@ -41,7 +42,8 @@ class LoginPage extends StatelessWidget {
               child: Center(
                 child: Container(
                   width: 360.w,
-                  padding: EdgeInsets.symmetric(vertical: 32.0, horizontal: 32.0),
+                  padding:
+                      EdgeInsets.symmetric(vertical: 32.0, horizontal: 32.0),
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
@@ -49,7 +51,7 @@ class LoginPage extends StatelessWidget {
                           alignment: Alignment.centerRight,
                           child: Text(
                             'مرحبا بكم في تطبيق التراس',
-                            style: Mystyle.titleTextStyle,
+                            style: MyStyle.titleTextStyle,
                           ),
                         ),
                         Container(
@@ -58,7 +60,7 @@ class LoginPage extends StatelessWidget {
                           child: Text(
                             'سجل الدخول لتتمكن من المشاركة في التطبيق \n',
                             style: TextStyle(
-                              color: Mystyle.textgreycolor,
+                              color: MyStyle.textgreycolor,
                               fontWeight: FontWeight.bold,
                               fontSize: ScreenUtil().setSp(14),
                             ),
@@ -88,9 +90,10 @@ class LoginPage extends StatelessWidget {
                         PrimaryButton("دخول", state is LoginLoading, false, () {
                           FocusScope.of(context).requestFocus(FocusNode());
                           if (_formKey.currentState!.validate()) {
-                            context
-                                .read<LoginCubit>()
-                                .login(context, _usernameController.text, _passwordController.text);
+                            context.read<LoginCubit>().login(
+                                context,
+                                _usernameController.text,
+                                _passwordController.text);
                           }
                           // context
                           //     .read<LoginCubit>()
@@ -106,18 +109,20 @@ class LoginPage extends StatelessWidget {
                             children: [
                               Text(
                                 'ليس لديك حساب ؟',
-                                style: Mystyle.blackCatTextStyle,
+                                style: MyStyle.blackCatTextStyle,
                               ),
                               InkWell(
                                 onTap: () {
-                                  Navigator.pushReplacementNamed(context, RegisterScreen.routeName);
+                                  Navigator.pushReplacementNamed(
+                                      context, RegisterScreen.routeName);
                                 },
                                 borderRadius: BorderRadius.circular(4.0),
                                 child: Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 5.0),
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 5.0),
                                   child: Text(
                                     'حساب جديد',
-                                    style: Mystyle.buttTextStyle,
+                                    style: MyStyle.buttTextStyle,
                                   ),
                                 ),
                               ),

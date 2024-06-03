@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:gooto/models/blog_model.dart';
 import 'package:gooto/screen/feed/readmore_screen.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 class CardHome extends StatelessWidget {
   int index;
@@ -22,13 +22,14 @@ class CardHome extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 12),
       child: InkWell(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (_) => MoreScreen(post)));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (_) => MoreScreen(post)));
         },
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16),
           width: double.infinity,
           alignment: Alignment.center,
-          decoration: Mystyle.cardhome(),
+          decoration: MyStyle.cardhome(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,14 +71,14 @@ class CardHome extends StatelessWidget {
               SizedBox(height: 6.h),
               Text(
                 post.title.toString(),
-                style: Mystyle.second16TextStyle,
+                style: MyStyle.second16TextStyle,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
               SizedBox(height: 6.h),
               // Text(
               //   PostModel().parseHtmlString(post.desc.toString()),
-              //   style: Mystyle.dash10TextStyle,
+              //   style: MyStyle.dash10TextStyle,
               //   maxLines: 2,
               //   overflow: TextOverflow.ellipsis,
               // ),
@@ -87,12 +88,12 @@ class CardHome extends StatelessWidget {
                 children: [
                   Text(
                     "قراءة المزيد",
-                    style: Mystyle.buttTextStyle,
+                    style: MyStyle.buttTextStyle,
                   ),
                   Text(
                     // dayleft(post.creationDate!),
                     "",
-                    style: Mystyle.sgreyTextStyle,
+                    style: MyStyle.sgreyTextStyle,
                   )
                 ],
               ),

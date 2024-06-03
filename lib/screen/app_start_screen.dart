@@ -5,7 +5,7 @@ import 'package:gooto/screen/auth/login_screen.dart';
 import 'package:gooto/screen/auth/splash_screen.dart';
 import 'package:gooto/screen/bottom_tab.dart';
 import 'package:gooto/services/app_config.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 class AppStartScreen extends StatefulWidget {
   static const routeName = 'appstart';
@@ -40,7 +40,7 @@ class _AppStartScreenState extends State<AppStartScreen> {
         }
       },
       child: Scaffold(
-        backgroundColor: Mystyle.primarycolo,
+        backgroundColor: MyStyle.primarycolo,
         body: Center(
           child: CircularProgressIndicator(),
         ),

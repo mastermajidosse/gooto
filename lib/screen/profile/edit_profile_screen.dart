@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gooto/bloc/profile/profile_cubit.dart';
 import 'package:gooto/models/user_model.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 import 'package:image_picker/image_picker.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -53,7 +53,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         appBar: PreferredSize(
           preferredSize: Size(MediaQuery.of(context).size.width, 60.0),
           child: Container(
-            // decoration: Mystyle.appbaDecotatio(),
+            // decoration: MyStyle.appbaDecotatio(),
             width: double.infinity,
             child: Container(
               height: 56.h,
@@ -67,7 +67,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       customBorder: CircleBorder(),
                       child: Icon(
                         Icons.arrow_back,
-                        color: Mystyle.textgreycolor,
+                        color: MyStyle.textgreycolor,
                       ),
                       onTap: () {
                         Navigator.pop(context);
@@ -80,14 +80,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     padding: EdgeInsets.symmetric(vertical: 12),
                     child: Text(
                       "تعديل المعلومات",
-                      style: Mystyle.dashTextStyle,
+                      style: MyStyle.dashTextStyle,
                     ),
                   ),
                   // Padding(
                   //   padding: EdgeInsets.symmetric(vertical: 12),
                   //   child: Text(
                   //     "Edit Profile",
-                  //     style: Mystyle.dashTextStyle,
+                  //     style: MyStyle.dashTextStyle,
                   //   ),
                   // ),
                   InkWell(
@@ -103,7 +103,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       alignment: Alignment.center,
                       child: Text(
                         "تغيير",
-                        style: Mystyle.buttTextStyle,
+                        style: MyStyle.buttTextStyle,
                       ),
                     ),
                   ),
@@ -119,7 +119,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             child: ListView(
               children: [
                 Container(
-                  // decoration: Mystyle.appbaDecotatio(),
+                  // decoration: MyStyle.appbaDecotatio(),
                   color: Colors.white,
                   width: double.infinity,
                   child: Column(
@@ -135,11 +135,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           children: [
                             Text(
                               "تغيير صورة المستخدم",
-                              style: Mystyle.regularTextStyle,
+                              style: MyStyle.regularTextStyle,
                             ),
                             // Text(
                             //   "Change profile photo",
-                            //   style: Mystyle.regularTextStyle,
+                            //   style: MyStyle.regularTextStyle,
                             // ),
                             SizedBox(height: 16.w),
                             InkWell(
@@ -150,7 +150,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                       return Directionality(
                                         textDirection: TextDirection.rtl,
                                         child: Column(
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           mainAxisSize: MainAxisSize.min,
                                           children: <Widget>[
                                             SizedBox(height: 6),
@@ -160,8 +161,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                                 Navigator.pop(context);
 
                                                 setState(() async {
-                                                  newimage = await _picker.pickImage(
-                                                      source: ImageSource.camera);
+                                                  newimage =
+                                                      await _picker.pickImage(
+                                                          source: ImageSource
+                                                              .camera);
                                                 });
                                               },
                                               title: Text("من الكاميرا"),
@@ -172,8 +175,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                               onTap: () async {
                                                 Navigator.pop(context);
                                                 setState(() async {
-                                                  newimage = await _picker.pickImage(
-                                                      source: ImageSource.gallery);
+                                                  newimage =
+                                                      await _picker.pickImage(
+                                                          source: ImageSource
+                                                              .gallery);
                                                 });
                                               },
                                               title: Text("من الصور"),
@@ -194,12 +199,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                           color: Colors.white,
                                         ),
                                       ),
-                                  errorWidget: (context, url, error) => Container(
+                                  errorWidget: (context, url, error) =>
+                                      Container(
                                         width: double.infinity,
                                         height: ScreenUtil().setHeight(300),
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(100),
-                                          border: Border.all(color: Colors.black54, width: 2),
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                          border: Border.all(
+                                              color: Colors.black54, width: 2),
                                           image: newimage == null
                                               ? DecorationImage(
                                                   image: NetworkImage(
@@ -208,17 +216,21 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                                   fit: BoxFit.cover,
                                                 )
                                               : DecorationImage(
-                                                  image: Image.file(File(newimage!.path)).image,
+                                                  image: Image.file(
+                                                          File(newimage!.path))
+                                                      .image,
                                                   fit: BoxFit.cover,
                                                 ),
                                         ),
                                       ),
                                   imageUrl: widget.userModel.imgurl.toString(),
-                                  imageBuilder: (context, imageProvider) => Container(
+                                  imageBuilder: (context, imageProvider) =>
+                                      Container(
                                         width: double.infinity,
                                         height: ScreenUtil().setHeight(300),
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(300),
+                                          borderRadius:
+                                              BorderRadius.circular(300),
                                           image: newimage == null
                                               ? DecorationImage(
                                                   image: NetworkImage(
@@ -227,7 +239,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                                   fit: BoxFit.cover,
                                                 )
                                               : DecorationImage(
-                                                  image: Image.file(File(newimage!.path)).image,
+                                                  image: Image.file(
+                                                          File(newimage!.path))
+                                                      .image,
                                                   fit: BoxFit.cover,
                                                 ),
                                         ),
@@ -246,7 +260,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 66.0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 66.0),
                               child: Divider(
                                 color: Colors.black26,
                                 thickness: 1,
@@ -256,17 +271,17 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                             SizedBox(height: 12.w),
                             Text(
                               "الاسم",
-                              style: Mystyle.regulargreyTextStyle,
+                              style: MyStyle.regulargreyTextStyle,
                             ),
                             // Text(
                             //   "Username",
-                            //   style: Mystyle.regulargreyTextStyle,
+                            //   style: MyStyle.regulargreyTextStyle,
                             // ),
                             SizedBox(height: 6.w),
                             TextFormField(
                               cursorColor: Colors.blueGrey,
                               controller: name,
-                              decoration: Mystyle.inputregulare(
+                              decoration: MyStyle.inputregulare(
                                 'الاسم*',
                               ),
                               validator: (value) {
@@ -282,11 +297,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                             SizedBox(height: ScreenUtil().setHeight(20)),
                             Text(
                               "الايميل",
-                              style: Mystyle.regulargreyTextStyle,
+                              style: MyStyle.regulargreyTextStyle,
                             ),
                             // Text(
                             //   "Email",
-                            //   style: Mystyle.regulargreyTextStyle,
+                            //   style: MyStyle.regulargreyTextStyle,
                             // ),
                             TextFormField(
                               cursorColor: Colors.blueGrey,
@@ -297,12 +312,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                             // SizedBox(height: ScreenUtil().setHeight(16)),
                             // Text(
                             //   "Country",
-                            //   style: Mystyle.regulargreyTextStyle,
+                            //   style: MyStyle.regulargreyTextStyle,
                             // ),
                             // TextFormField(
                             //   cursorColor: Colors.blueGrey,
                             //   controller: mycountry,
-                            //   decoration: Mystyle.inputregulare(
+                            //   decoration: MyStyle.inputregulare(
                             //     'country*',
                             //   ),
                             //   validator: (value) {
@@ -316,12 +331,12 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                             SizedBox(height: ScreenUtil().setHeight(16)),
                             // Text(
                             //   "Instagram",
-                            //   style: Mystyle.regulargreyTextStyle,
+                            //   style: MyStyle.regulargreyTextStyle,
                             // ),
                             // TextFormField(
                             //   cursorColor: Colors.blueGrey,
                             //   controller: mail,
-                            //   decoration: Mystyle.inputregulare(
+                            //   decoration: MyStyle.inputregulare(
                             //     'instagram*',
                             //   ),
                             //   validator: (value) {

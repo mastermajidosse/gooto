@@ -6,7 +6,7 @@ import 'package:gooto/bloc/auth/signup_cubit.dart';
 import 'package:gooto/models/user_model.dart';
 import 'package:gooto/screen/app_start_screen.dart';
 import 'package:gooto/screen/auth/login_screen.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 import 'package:gooto/widgets/primary_button.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -54,7 +54,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: BlocConsumer<SignupCubit, SignupState>(
         listener: (context, state) {
           if (state is SignupError) {
-            return Mystyle.err(ScaffoldMessenger.of(context).showSnackBar, state.message);
+            return MyStyle.err(
+                ScaffoldMessenger.of(context).showSnackBar, state.message);
           } else if (state is SignupSuccess) {
             print("brace you gonna login");
             BlocProvider.of<AuthCubit>(context)..checkAuth(context);
@@ -88,7 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Center(
                       child: Text(
                         'تسجيل حساب جديد',
-                        style: Mystyle.dashTextStyle,
+                        style: MyStyle.dashTextStyle,
                       ),
                     ),
                     Form(
@@ -109,7 +110,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 }
                                 return null;
                               },
-                              decoration: Mystyle.inputregulare("الاسم"),
+                              decoration: MyStyle.inputregulare("الاسم"),
                             ),
                           ),
                           // Padding(
@@ -126,7 +127,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           //       }
                           //       return null;
                           //     },
-                          //     decoration: Mystyle.inputregulare("اللقب"),
+                          //     decoration: MyStyle.inputregulare("اللقب"),
                           //   ),
                           // ),
                           Padding(
@@ -134,7 +135,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             child: TextFormField(
                               cursorColor: Colors.blueGrey,
                               controller: email,
-                              decoration: Mystyle.inputregulare('الايميل'),
+                              decoration: MyStyle.inputregulare('الايميل'),
                               style: TextStyle(color: Colors.black54),
                               validator: (value) {
                                 if (value!.isEmpty) {
@@ -166,11 +167,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 }
                                 return null;
                               },
-                              decoration: Mystyle.inputregulare("كلمة السر").copyWith(
+                              decoration:
+                                  MyStyle.inputregulare("كلمة السر").copyWith(
                                 suffixIcon: IconButton(
                                   icon: Icon(
-                                    _passwordVisible ? Icons.visibility : Icons.visibility_off,
-                                    color: _passwordVisible ? Colors.black : Colors.grey,
+                                    _passwordVisible
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                    color: _passwordVisible
+                                        ? Colors.black
+                                        : Colors.grey,
                                   ),
                                   onPressed: () {
                                     setState(() {
@@ -184,7 +190,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ],
                       ),
                     ),
-                    PrimaryButton("سجل الحساب", state is SignupLoading?, false, () {
+                    PrimaryButton("سجل الحساب", state is SignupLoading?, false,
+                        () {
                       FocusScope.of(context).requestFocus(FocusNode());
                       if (_formKey.currentState!.validate()) {
                         UserModel newUserModel = UserModel(
@@ -192,7 +199,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           password: pass.text,
                           firstname: username.text,
                         );
-                        context.read<SignupCubit>().registerNew(newUserModel, context);
+                        context
+                            .read<SignupCubit>()
+                            .registerNew(newUserModel, context);
                       }
                     }),
                     SizedBox(height: 20.w),
@@ -202,18 +211,19 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       children: [
                         Text(
                           'لديك حساب مسبقا',
-                          style: Mystyle.regulargreyTextStyle,
+                          style: MyStyle.regulargreyTextStyle,
                         ),
                         InkWell(
                           onTap: () {
-                            Navigator.pushReplacementNamed(context, LoginPage.routeName);
+                            Navigator.pushReplacementNamed(
+                                context, LoginPage.routeName);
                           },
                           borderRadius: BorderRadius.circular(4.0),
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 5.0),
                             child: Text(
                               'سجل دخولك',
-                              style: Mystyle.buttTextStyle,
+                              style: MyStyle.buttTextStyle,
                             ),
                           ),
                         ),

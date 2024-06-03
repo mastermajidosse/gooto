@@ -12,7 +12,7 @@ import 'package:gooto/screen/profile/edit_profile_screen.dart';
 import 'package:gooto/screen/profile/signup_profile_screen.dart';
 import 'package:gooto/services/service/auth_service.dart';
 import 'package:gooto/utils/img_bigger.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share/share.dart';
 
@@ -24,8 +24,10 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _SettingScreenState extends State<SettingScreen> {
-  var image = "https://i0.wp.com/rouelibrenmaine.fr/wp-content/uploads/2018/10/empty-avatar.png";
-  String sh = "مرحبا بكم في تطبيق التراس حيت نشارك جميع معلومات وقصص واخبار اللتراس المغرب ";
+  var image =
+      "https://i0.wp.com/rouelibrenmaine.fr/wp-content/uploads/2018/10/empty-avatar.png";
+  String sh =
+      "مرحبا بكم في تطبيق التراس حيت نشارك جميع معلومات وقصص واخبار اللتراس المغرب ";
   Future<bool> csac() async {
     return false;
   }
@@ -63,7 +65,7 @@ class _SettingScreenState extends State<SettingScreen> {
                 // leading: BackButton(color: Colors.black),
                 title: Text(
                   "الحساب",
-                  style: Mystyle.regularTextStyle,
+                  style: MyStyle.regularTextStyle,
                 ),
               ),
               backgroundColor: Colors.white,
@@ -98,7 +100,8 @@ class _SettingScreenState extends State<SettingScreen> {
                                 height: ScreenUtil().setHeight(300),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(100),
-                                  border: Border.all(color: Colors.black54, width: 2),
+                                  border: Border.all(
+                                      color: Colors.black54, width: 2),
                                   image: DecorationImage(
                                     image: NetworkImage(image),
                                     fit: BoxFit.cover,
@@ -107,12 +110,14 @@ class _SettingScreenState extends State<SettingScreen> {
                               ),
                               imageUrl: state.myuser.imgurl ??
                                   "https://i0.wp.com/rouelibrenmaine.fr/wp-content/uploads/2018/10/empty-avatar.png",
-                              imageBuilder: (context, imageProvider) => Container(
+                              imageBuilder: (context, imageProvider) =>
+                                  Container(
                                 width: double.infinity,
                                 height: ScreenUtil().setHeight(300),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(100),
-                                  border: Border.all(color: Colors.black54, width: 2),
+                                  border: Border.all(
+                                      color: Colors.black54, width: 2),
                                   image: DecorationImage(
                                     image: imageProvider,
                                     fit: BoxFit.cover,
@@ -127,7 +132,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             child: Container(
                               child: Text(
                                 state.myuser.firstname!,
-                                style: Mystyle.dashTextcoloStyle,
+                                style: MyStyle.dashTextcoloStyle,
                               ),
                             ),
                           ),
@@ -152,14 +157,15 @@ class _SettingScreenState extends State<SettingScreen> {
                                 ? Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (_) => EditProfileScreen(state.myuser)))
+                                        builder: (_) =>
+                                            EditProfileScreen(state.myuser)))
                                 : print("err");
                           },
                           title: Padding(
                             padding: EdgeInsets.only(left: 16),
                             child: Text(
                               "المعلومات الشخصية",
-                              style: Mystyle.regularTextStyle,
+                              style: MyStyle.regularTextStyle,
                             ),
                           ),
                           trailing: Icon(Icons.keyboard_arrow_left_sharp),
@@ -185,7 +191,7 @@ class _SettingScreenState extends State<SettingScreen> {
                               padding: EdgeInsets.only(left: 16),
                               child: Text(
                                 "مشاركة التطبيق",
-                                style: Mystyle.regularTextStyle,
+                                style: MyStyle.regularTextStyle,
                               ),
                             ),
                             trailing: Icon(Icons.keyboard_arrow_left_sharp)),
@@ -219,7 +225,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             padding: EdgeInsets.only(left: 16),
                             child: Text(
                               "تواصل معنا",
-                              style: Mystyle.regularTextStyle,
+                              style: MyStyle.regularTextStyle,
                             ),
                           ),
                           trailing: Icon(Icons.keyboard_arrow_left_sharp),
@@ -249,7 +255,7 @@ class _SettingScreenState extends State<SettingScreen> {
                             padding: EdgeInsets.only(left: 16),
                             child: Text(
                               "خروج",
-                              style: Mystyle.regularTextStyle,
+                              style: MyStyle.regularTextStyle,
                             ),
                           ),
                           trailing: Icon(Icons.keyboard_arrow_left_sharp),
@@ -277,7 +283,7 @@ class _SettingScreenState extends State<SettingScreen> {
                           //     )),
                           Text(
                             "التراس",
-                            style: Mystyle.buttTextStyle,
+                            style: MyStyle.buttTextStyle,
                           ),
                         ],
                       ),
@@ -306,7 +312,7 @@ class _SettingScreenState extends State<SettingScreen> {
         context: context,
         builder: (context) {
           return ImageBigger.imagePop(
-            Mystyle.isNullEmptyFalseOrZero(smile!) ? image : smile!,
+            MyStyle.isNullEmptyFalseOrZero(smile!) ? image : smile!,
           );
         });
   }

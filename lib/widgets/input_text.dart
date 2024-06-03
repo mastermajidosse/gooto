@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 class InputFormText extends StatelessWidget {
   var _passwordController;
@@ -13,10 +13,13 @@ class InputFormText extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       cursorColor: Colors.white,
-      textInputAction: hint == "كلمة السر" ? TextInputAction.done : TextInputAction.next,
-      keyboardType: hint == "كلمة السر" ? TextInputType.visiblePassword : TextInputType.text,
+      textInputAction:
+          hint == "كلمة السر" ? TextInputAction.done : TextInputAction.next,
+      keyboardType: hint == "كلمة السر"
+          ? TextInputType.visiblePassword
+          : TextInputType.text,
       obscureText: hint == "كلمة السر" ? true : false,
-      style: TextStyle(color: Mystyle.textgreycolor),
+      style: TextStyle(color: MyStyle.textgreycolor),
       controller: _passwordController,
       validator: (value) {
         if (hint == "الايميل") {
@@ -36,7 +39,7 @@ class InputFormText extends StatelessWidget {
           return null;
         }
       },
-      decoration: Mystyle.inputregulare(hint),
+      decoration: MyStyle.inputregulare(hint),
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gooto/models/blog_model.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 class CardHomeSaved extends StatelessWidget {
   int index;
@@ -26,7 +26,7 @@ class CardHomeSaved extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16),
           width: double.infinity,
           alignment: Alignment.center,
-          decoration: Mystyle.cardhome(),
+          decoration: MyStyle.cardhome(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +48,7 @@ class CardHomeSaved extends StatelessWidget {
               SizedBox(height: 6.h),
               Text(
                 post.title.toString(),
-                style: Mystyle.second20TextStyle,
+                style: MyStyle.second20TextStyle,
               ),
               SizedBox(height: 8.h),
             ],

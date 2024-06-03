@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gooto/utils/mystyle.dart';
+import 'package:gooto/utils/MyStyle.dart';
 
 class OneCat extends StatelessWidget {
   String name;
@@ -17,7 +17,8 @@ class OneCat extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
       child: Text(
         name,
-        style: checked ? Mystyle.playernameTextStyle : Mystyle.blacksmallTextStyle,
+        style:
+            checked ? MyStyle.playernameTextStyle : MyStyle.blacksmallTextStyle,
       ),
     );
     ;

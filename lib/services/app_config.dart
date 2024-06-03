@@ -12,4 +12,6 @@ class AppConfig {
   static Environment env = Environment.DEV;
 }
 
+
+
 enum Environment { DEV, PROD, STAG }

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 // import 'package:gooto/views/tabs/bottomtab_screen.dart';
 
-class Mystyle {
+class MyStyle {
   // static const Color primarycolo = Color.fromARGB(255, 23, 49, 17); // #b30e35
   // static const Color primarycolo = Color.fromARGB(255, 85, 6, 6); // #b30e35
   static const Color primarycolo = Color(0xFF008aae);
@@ -86,7 +86,7 @@ class Mystyle {
     fontSize: ScreenUtil().setSp(16),
   );
   static TextStyle buttTextStyle = TextStyle(
-    color: Mystyle.primarycolo,
+    color: MyStyle.primarycolo,
     fontWeight: FontWeight.bold,
     fontSize: ScreenUtil().setSp(16),
   );
@@ -186,7 +186,8 @@ class Mystyle {
 
   //
 
-  static BoxDecoration storedecoration({Color colo = Colors.white, String? image}) {
+  static BoxDecoration storedecoration(
+      {Color colo = Colors.white, String? image}) {
     return BoxDecoration(
       color: colo,
       // image: DecorationImage(
@@ -223,7 +224,8 @@ class Mystyle {
   //   );
   // }
 
-  static InputDecoration inputregular(String hint, {Icon? icon, Icon? oneicon}) {
+  static InputDecoration inputregular(String hint,
+      {Icon? icon, Icon? oneicon}) {
     return InputDecoration(
       hintText: hint,
       hintStyle: TextStyle(
@@ -237,7 +239,7 @@ class Mystyle {
       ),
       focusedBorder: UnderlineInputBorder(
         borderRadius: BorderRadius.circular(5),
-        borderSide: BorderSide(color: Mystyle.textlinkcolor),
+        borderSide: BorderSide(color: MyStyle.textlinkcolor),
       ),
       errorBorder: UnderlineInputBorder(
         borderRadius: BorderRadius.circular(5),
@@ -288,10 +290,11 @@ class Mystyle {
   static InputDecoration inputregulare(hint, {radius = 100.0}) {
     return InputDecoration(
       hintText: hint,
-      labelStyle: TextStyle(color: Mystyle.textgreycolor),
-      errorStyle: TextStyle(color: Mystyle.pinkcolor),
-      hintStyle: TextStyle(color: Mystyle.textgreycolor),
-      contentPadding: EdgeInsets.only(bottom: 9.w, top: 9.w, left: 28.0, right: 18.0),
+      labelStyle: TextStyle(color: MyStyle.textgreycolor),
+      errorStyle: TextStyle(color: MyStyle.pinkcolor),
+      hintStyle: TextStyle(color: MyStyle.textgreycolor),
+      contentPadding:
+          EdgeInsets.only(bottom: 9.w, top: 9.w, left: 28.0, right: 18.0),
       enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(radius),
           borderSide: BorderSide(
@@ -300,14 +303,14 @@ class Mystyle {
           )),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(radius),
-        borderSide: BorderSide(color: Mystyle.textgreycolor),
+        borderSide: BorderSide(color: MyStyle.textgreycolor),
       ),
       errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(radius),
-          borderSide: BorderSide(color: Mystyle.pinkcolor)),
+          borderSide: BorderSide(color: MyStyle.pinkcolor)),
       focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(radius),
-          borderSide: BorderSide(color: Mystyle.pinkcolor)),
+          borderSide: BorderSide(color: MyStyle.pinkcolor)),
     );
   }
 
@@ -371,9 +374,11 @@ class Mystyle {
       return o.toString();
   }
 
-  static bool isNullEmptyOrFalse(Object? o) => o == null || false == o || "" == o;
+  static bool isNullEmptyOrFalse(Object? o) =>
+      o == null || false == o || "" == o;
 
-  static bool isNullEmptyFalseOrZero(Object? o) => o == null || false == o || 0 == o || "" == o;
+  static bool isNullEmptyFalseOrZero(Object? o) =>
+      o == null || false == o || 0 == o || "" == o;
 
   static String capitalize(String s) => s[0].toUpperCase() + s.substring(1);
   DateTime now = DateTime.now();
@@ -389,7 +394,8 @@ class Mystyle {
 
     // print("${user.lastsmileDate!.day} .. ${now.day - 1}");
     if ((user.lastsmileDate!.month == now.month) &&
-        (user.lastsmileDate!.day == now.day - 1 || user.lastsmileDate!.day == now.day)) {
+        (user.lastsmileDate!.day == now.day - 1 ||
+            user.lastsmileDate!.day == now.day)) {
       return true;
     } else {
       return false;
@@ -400,7 +406,8 @@ class Mystyle {
     DateTime now = DateTime.now();
 
     // print("${date.lastsmileDate!.day} .. ${now.day - 1}");
-    if ((date!.month == now.month) && (date!.day == now.day - 1 || date!.day == now.day)) {
+    if ((date!.month == now.month) &&
+        (date!.day == now.day - 1 || date!.day == now.day)) {
       return true;
     } else {
       return false;
@@ -411,7 +418,8 @@ class Mystyle {
     DateTime now = DateTime.now();
 
     // print("${user.lastsmileDate!.day} .. ${now.day - 1}");
-    if ((date!.month == now.month) && (date!.day == now.day - 1 && date!.day != now.day)) {
+    if ((date!.month == now.month) &&
+        (date!.day == now.day - 1 && date!.day != now.day)) {
       return true;
     } else {
       return false;
