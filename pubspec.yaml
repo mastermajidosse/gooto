@@ -58,6 +58,10 @@ dependencies:
   easy_localization: ^3.0.0
   flutter_widget_from_html: ^0.14.11
   gap: ^3.0.1
+  sqflite: ^2.3.3+1
+  path: ^1.9.0
+  readmore: ^3.0.0
+  audioplayers: ^6.0.0
 
 dev_dependencies:
   flutter_test:
@@ -92,6 +96,7 @@ flutter:
     - assets/
     - assets/translations/
     - assets/images/
+    - assets/audio/
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

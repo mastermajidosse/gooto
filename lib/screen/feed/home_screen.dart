@@ -141,8 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               height: 350,
               child: ListView.builder(
-                // scrollDirection: Axis.horizontal,
-                itemCount: 1,
+                itemCount: 2,
                 itemBuilder: (context, index) {
                   final CardModule card = cardsList[index];
                   return CustomCardTwo(card: card);
