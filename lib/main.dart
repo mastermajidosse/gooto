@@ -29,12 +29,12 @@ class MyApp extends StatelessWidget {
               primaryColor: MyStyle.primarycolo,
             ),
             debugShowCheckedModeBanner: false,
-            // onGenerateRoute: router.RoutGenerator.generateRout,
-            // initialRoute: router.initialRoute,
+            onGenerateRoute: router.RoutGenerator.generateRout,
+            initialRoute: router.initialRoute,
             // home: LoginPage(),
-            // home: HomeScreen(),
+            home: HomeScreen(),
             // home: MoreScreen(BlogModel()),
-            home: SaveScreen()
+            // home: SaveScreen()
           );
         },
       ),

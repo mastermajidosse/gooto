@@ -18,26 +18,27 @@ class _AppStartScreenState extends State<AppStartScreen> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<AuthCubit>(context)
-      ..checkAuth(context).timeout((Duration(seconds: 10)), onTimeout: () {
-        print("delayed,,,,,,");
-        Navigator.pushReplacementNamed(context, BottomTabBarr.routeName);
-      });
-    ;
+    // BlocProvider.of<AuthCubit>(context)
+    //   ..checkAuth(context).timeout((Duration(seconds: 10)), onTimeout: () {
+    //     print("delayed,,,,,,");
+    //     Navigator.pushReplacementNamed(context, BottomTabBarr.routeName);
+    //   });
+
+    Future.delayed(Duration(seconds: 7)).then((value) {
+      Navigator.pushReplacementNamed(context, BottomTabBarr.routeName);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
-        if (state is Unauthenticated || state is Uninitialized) {
-          // if (AppConfig.env == Environment.STAG) {
-          //   Navigator.pushReplacementNamed(context, LoginPage.routeName);
-          // } else
-          Navigator.pushReplacementNamed(context, SplashScreen.routeName);
-        } else if (state is Authenticated) {
-          Navigator.pushReplacementNamed(context, SplashScreen.routeName);
-        }
+        // if (state is Unauthenticated || state is Uninitialized) {
+
+        //   Navigator.pushReplacementNamed(context, SplashScreen.routeName);
+        // } else if (state is Authenticated) {
+        //   Navigator.pushReplacementNamed(context, SplashScreen.routeName);
+        // }
       },
       child: Scaffold(
         backgroundColor: MyStyle.primarycolo,

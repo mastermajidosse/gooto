@@ -39,6 +39,7 @@ class _BottomTabBarrState extends State<BottomTabBarr> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: widget.widgetoutside ?? _widgetOptions.elementAt(_selectedIndex),
         bottomNavigationBar: Container(
           height: 50.w,
@@ -46,17 +47,14 @@ class _BottomTabBarrState extends State<BottomTabBarr> {
           child: BottomAppBar(
             notchMargin: 4.0,
             color: Colors.white,
-            elevation: 10,
+            elevation: 1,
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 costumcollum(Icons.home, Icons.home_outlined, 0),
-                costumcollum(
-                    FontAwesomeIcons.youtube, FontAwesomeIcons.youtube, 1),
-                costumcollum(Icons.article, Icons.article_outlined, 2),
-                costumcollum(Icons.store, Icons.store_outlined, 3),
-                costumcollum(Icons.person, Icons.person_outline, 4),
+                costumcollum(Icons.favorite, Icons.favorite_outline, 2),
+                costumcollum(Icons.person, Icons.person_outline, 3),
               ],
             ),
           ),
@@ -76,9 +74,7 @@ class _BottomTabBarrState extends State<BottomTabBarr> {
         child: Icon(
           _selectedIndex == numb ? ico : txt,
           size: _selectedIndex == numb ? 32 : 28,
-          color: _selectedIndex == numb
-              ? Colors.black
-              : MyStyle.textqcolor.withOpacity(.6),
+          color: _selectedIndex == numb ? MyStyle.primarycolo : Colors.black54,
           // color: MyStyle.primarycolo,
         ),
       ),

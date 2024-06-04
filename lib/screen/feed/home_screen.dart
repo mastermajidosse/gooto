@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyStyle.secondarycolo,
+      backgroundColor: Colors.grey[200],
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -71,8 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 45,
               width: 322,
               // margin: EdgeInsets.all(8),
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(60)),
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(60)),
               child: TextFormField(
                 onFieldSubmitted: (v) {
                   print(v);
