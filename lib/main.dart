@@ -7,6 +7,7 @@ import 'package:gooto/models/post_model.dart';
 import 'package:gooto/utils/MyStyle.dart';
 import 'screen/feed/home_screen.dart';
 import 'screen/feed/readmore_screen.dart';
+import 'screen/feed/save_screen.dart';
 import 'utils/route_genetator.dart' as router;
 // import 'package:gooto/screen/auth/login_screen.dart';
 
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
             // initialRoute: router.initialRoute,
             // home: LoginPage(),
             // home: HomeScreen(),
-            home: MoreScreen(BlogModel()),
+            // home: MoreScreen(BlogModel()),
+            home: SaveScreen()
           );
         },
       ),

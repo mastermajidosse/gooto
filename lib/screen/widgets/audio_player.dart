@@ -54,21 +54,20 @@ class _AudioPlayerWidgetState extends State<AudioPlayerWidget> {
     super.dispose();
   }
 
-  void playAudio() async {
-    try {
-      print('Audio URL: $widget.audioUrl');
-      print('Player state before: $playerState');
-      if (playerState == PlayerState.playing) {
-        return; // Already playing
-      }
-      await audioPlayer.play(UrlSource(widget.audioUrl));
-      setState(() {
-        playerState = PlayerState.playing;
-      });
-    } catch (error) {
-      print('Error playing audio: $error');
+ void playAudio() async {
+  try {
+    print('Audio path: assets/${widget.audioUrl}');
+    if (playerState == PlayerState.playing) {
+      return; // Already playing
     }
+    await audioPlayer.play(AssetSource(widget.audioUrl));
+    setState(() {
+      playerState = PlayerState.playing;
+    });
+  } catch (error) {
+    print('Error playing audio: $error');
   }
+}
 
   @override
   Widget build(BuildContext context) {

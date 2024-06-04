@@ -22,19 +22,6 @@ class _MoreScreenState extends State<MoreScreen> {
       "https://example.com/audio.mp3"; // Replace with your audio URL
   String overviewText =
       "Scattered along Scotland's west coast, this chain of isles is one of the country's most beautiful places to visit. Think shimmering white-sand beaches, sparkling seas and crowd-free hinterlands – it's one of the UK's last remaining secrets, and for good reason.";
-  bool isReadMore = false; // Variable to track readmore state
-  void playAudio() async {
-    final result = await audioPlayer.play(UrlSource(audioUrl));
-  }
-
-  void pauseAudio() async {
-    await audioPlayer.pause();
-  }
-
-  void stopAudio() async {
-    await audioPlayer.stop();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -172,7 +159,7 @@ class _MoreScreenState extends State<MoreScreen> {
                     ),
                     Gap(30),
                     AudioPlayerWidget(
-                      audioUrl: 'assets/audio/test.mp3',
+                      audioUrl: 'audio/test.mp3',
                     )
                   ],
                 ),
