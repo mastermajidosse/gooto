@@ -1,22 +1,27 @@
-
 class CardModule {
   final int id;
-  final double price;
-  final String productImg;
-  final String productName;
+  final int price;
+  final String place;
+  final bool isLiked;
+  final String desc;
+  final String img;
   const CardModule({
     required this.id,
     required this.price,
-    required this.productImg,
-    required this.productName,
+    required this.place,
+    required this.isLiked,
+    required this.desc,
+    required this.img,
   });
 
-  CardModule copyWith(double newPrice) {
+  CardModule copyWith(bool newPrice) {
     return CardModule(
       id: this.id,
-      price: newPrice,
-      productImg: this.productImg,
-      productName: this.productName,
+      price: this.price,
+      place: this.place,
+      isLiked: newPrice,
+      desc: this.desc,
+      img: this.img,
     );
   }
 }
