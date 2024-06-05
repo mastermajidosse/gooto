@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import '../../models/card.dart';
+import '../../models/card_model.dart';
 import '../../utils/mystyle.dart';
 
 class CustomCard extends StatelessWidget {
   final CardModule card;
   final Function()? onTap;
-  const CustomCard({super.key, required this.card, required this.onTap});
+  final Function()? likeTap;
+  const CustomCard(
+      {super.key,
+      required this.card,
+      required this.likeTap,
+      required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +25,10 @@ class CustomCard extends StatelessWidget {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.grey
-                  .withOpacity(0.2), // Adjust shadow color and opacity
-              spreadRadius: 5, // Adjust shadow spread
-              blurRadius: 7, // Adjust shadow blur
-              offset: const Offset(0, 3), // Adjust shadow offset (x, y)
+              color: Colors.grey.withOpacity(0.2),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -33,7 +37,7 @@ class CustomCard extends StatelessWidget {
             Stack(
               children: [
                 Hero(
-                  tag: '${card.id}',
+                  tag: "imageHero${card.id}",
                   child: Container(
                     height: 200,
                     width: 200,
@@ -50,7 +54,7 @@ class CustomCard extends StatelessWidget {
                   right: 17,
                   top: 17,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: likeTap,
                     child: Container(
                       height: 37,
                       width: 37,
@@ -58,7 +62,7 @@ class CustomCard extends StatelessWidget {
                         color: Color(0xFFFFFFFF),
                         shape: BoxShape.circle,
                       ),
-                      child: card.isLiked
+                      child: card.isLiked == 1
                           ? Icon(
                               Icons.favorite,
                               color: MyStyle.reddcolor,

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:gooto/models/card.dart';
-
+import 'package:gooto/bloc/card_cubit/blog_state.dart';
+import 'package:gooto/models/card_model.dart';
+import '../../bloc/card_cubit/blog_cubit.dart';
 import '../../config/demo.dart';
 import '../../utils/MyStyle.dart';
 import '../widgets/custom_card.dart';
@@ -17,7 +19,19 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<String> items = [];
+  @override
+  void initState() {
+    super.initState();
+    // context.read<BlogsTwoCubit>().loadBlogs(); // Load blogs on init
+  }
+
+  void toggleLike(int id, int currentIsLiked) async {
+    final newIsLiked = currentIsLiked == 0 ? 1 : 0; // Toggle value
+    await context.read<BlogsTwoCubit>().updateLikeStatus(id, newIsLiked);
+    await context.read<BlogsTwoCubit>().getCards();
+    context.read<BlogsTwoCubit>().loadBlogs();
+    print("newIsLiked ${newIsLiked}");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -158,50 +172,70 @@ class _HomeScreenState extends State<HomeScreen> {
             Gap(15),
             containerRow('Popular Places', 'View More'),
             Gap(10),
-            Container(
-              height: 280,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: cardsList.length,
-                itemBuilder: (context, index) {
-                  final CardModule card = cardsList[index];
-                  return CustomCard(
-                    card: card,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MoreScreen(card),
-                        ),
-                      );
-                    },
+            BlocBuilder<BlogsTwoCubit, BlogsTwoState>(
+              // bloc: cardCubit,
+              builder: (context, state) {
+                if (state is BlogsLoaded) {
+                  final cards = state.cardsList;
+                  return Container(
+                    height: 280,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: cards.length,
+                      itemBuilder: (context, index) {
+                        final CardModule card = cards[index];
+                        return CustomCard(
+                          likeTap: () => toggleLike(card.id, card.isLiked),
+                          card: card,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MoreScreen(card),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
                   );
-                },
-              ),
+                } else {
+                  return CircularProgressIndicator();
+                }
+              },
             ),
             Gap(15),
             containerRow('Best offers', "View More"),
             Gap(15),
-            Container(
-              height: 350,
-              child: ListView.builder(
-                itemCount: cardsList.length,
-                itemBuilder: (context, index) {
-                  final CardModule card = cardsList[index];
-                  return CustomCardTwo(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MoreScreen(card),
-                        ),
+            BlocBuilder<BlogsTwoCubit, BlogsTwoState>(
+                builder: (context, state) {
+              if (state is BlogsLoaded) {
+                final cards = state.cardsList;
+                return Container(
+                  height: 380,
+                  child: ListView.builder(
+                    itemCount: cards.length,
+                    itemBuilder: (context, index) {
+                      final CardModule card = cards[index];
+                      return CustomCardTwo(
+                        likeTap: () => toggleLike(card.id, card.isLiked),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MoreScreen(card),
+                            ),
+                          );
+                        },
+                        card: card,
                       );
                     },
-                    card: card,
-                  );
-                },
-              ),
-            ),
+                  ),
+                );
+              } else {
+                return CircularProgressIndicator();
+              }
+            }),
           ],
         ),
       ),

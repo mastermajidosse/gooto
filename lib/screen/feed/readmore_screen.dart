@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:gooto/models/blog_model.dart';
-import 'package:gooto/models/card.dart';
-import 'package:gooto/models/post_model.dart';
+import 'package:gooto/models/card_model.dart';
 import 'package:gooto/utils/mystyle.dart';
 import 'package:readmore/readmore.dart';
-import 'package:audioplayers/audioplayers.dart';
-
-import '../widgets/audio_player.dart'; // Import audioplayers package
+import '../widgets/audio_player.dart';
 
 class MoreScreen extends StatefulWidget {
   final CardModule post;
@@ -18,27 +14,64 @@ class MoreScreen extends StatefulWidget {
 }
 
 class _MoreScreenState extends State<MoreScreen> {
-  AudioPlayer audioPlayer = AudioPlayer(); // Create an AudioPlayer instance
-  String audioUrl =
-      "https://example.com/audio.mp3"; // Replace with your audio URL
-  String overviewText =
-      "Scattered along Scotland's west coast, this chain of isles is one of the country's most beautiful places to visit. Think shimmering white-sand beaches, sparkling seas and crowd-free hinterlands – it's one of the UK's last remaining secrets, and for good reason.";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF6F6F6),
       body: Stack(
         children: [
+          // InkWell(
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //   },
+          //   child: Container(
+          //     width: 45,
+          //     height: 45,
+          //     decoration: const BoxDecoration(
+          //       shape: BoxShape.circle,
+          //       color: Colors.white,
+          //     ),
+          //     child: Center(
+          //       child: Image.asset(
+          //         'assets/images/back_btn.png',
+          //         width: 24.0,
+          //         height: 24.0,
+          //       ),
+          //     ),
+          //   ),
+          // ),
           Hero(
-            // Wrap image with Hero widget for potential future transitions
-            tag: "${widget.post.id}", // Set a unique tag
+            tag: "imageHero${widget.post.id}",
             child: ClipRRect(
-              // borderRadius: BorderRadius.circular(20.0),
               child: Image.network(
                 widget.post.img,
-                fit: BoxFit.cover, // Adjust fit as needed (cover, contain)
+                fit: BoxFit.cover,
                 width: double.infinity,
-                height: 300.0, // Set a fixed height for the image
+                height: 300.0,
+              ),
+            ),
+          ),
+          Positioned(
+            top: 20.0,
+            left: 10.0,
+            child: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Container(
+                width: 45,
+                height: 45,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                ),
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/back_btn.png',
+                    width: 24.0,
+                    height: 24.0,
+                  ),
+                ),
               ),
             ),
           ),

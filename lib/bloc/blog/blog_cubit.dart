@@ -19,4 +19,5 @@ class BlogCubit extends Cubit<BlogState> {
       emit(BlogState(loading: false, errorMessage: e.toString()));
     }
   }
+  
 }

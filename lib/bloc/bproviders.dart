@@ -9,14 +9,21 @@ import 'package:gooto/bloc/feed/feed_cubit.dart';
 import 'package:gooto/bloc/profile/profile_cubit.dart';
 import 'package:gooto/bloc/store/store_cubit.dart';
 import 'package:gooto/bloc/video/video_cubit.dart';
+import 'card_cubit/blog_cubit.dart';
 
 List<BlocProvider> bproviders = [
   BlocProvider<AuthCubit>(
     create: (BuildContext context) => AuthCubit(),
   ),
-  // BlocProvider<BlogCubit>(
-  //   create: (BuildContext context) => BlogCubit()..initBlog(),
-  // ),
+  BlocProvider<AuthCubit>(
+    create: (BuildContext context) => AuthCubit(),
+  ),
+  BlocProvider<BlogCubit>(
+    create: (BuildContext context) => BlogCubit(),
+  ),
+  BlocProvider<BlogsTwoCubit>(
+    create: (BuildContext context) => BlogsTwoCubit()..loadBlogs(),
+  ),
   BlocProvider<LoginCubit>(
     create: (BuildContext context) => LoginCubit(),
   ),

@@ -2,13 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import '../../models/card.dart';
+import '../../models/card_model.dart';
 import '../../utils/mystyle.dart';
 
 class CustomCardTwo extends StatelessWidget {
   final CardModule card;
   final Function()? onTap;
-  const CustomCardTwo({super.key, required this.card, required this.onTap});
+  final Function()? likeTap;
+  const CustomCardTwo(
+      {super.key,
+      required this.card,
+      required this.onTap,
+      required this.likeTap});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +26,8 @@ class CustomCardTwo extends StatelessWidget {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.2), // Adjust shadow color and opacity
+              color: Colors.grey
+                  .withOpacity(0.2), // Adjust shadow color and opacity
               spreadRadius: 5, // Adjust shadow spread
               blurRadius: 7, // Adjust shadow blur
               offset: const Offset(0, 3), // Adjust shadow offset (x, y)
@@ -106,7 +112,7 @@ class CustomCardTwo extends StatelessWidget {
               top: 8,
               right: 8,
               child: InkWell(
-                onTap: () {},
+                onTap: likeTap,
                 child: Container(
                   height: 37,
                   width: 37,
@@ -114,10 +120,19 @@ class CustomCardTwo extends StatelessWidget {
                     color: Color(0xFFF6F6F6),
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(
-                    size: 30,
-                    Icons.favorite_outline_rounded,
-                  ),
+                  // child: Icon(
+                  //   size: 30,
+                  //   Icons.favorite_outline_rounded,
+                  // ),
+                  child: card.isLiked == 1
+                      ? Icon(
+                          Icons.favorite,
+                          color: MyStyle.reddcolor,
+                        )
+                      : Icon(
+                          Icons.favorite_outline_rounded,
+                          color: Color.fromARGB(255, 135, 121, 121),
+                        ),
                 ),
               ),
             ),
