@@ -105,7 +105,7 @@ class CustomCard extends StatelessWidget {
                       ),
                       Gap(6),
                       Text(
-                        card.place,
+                        "Morocco",
                         style: MyStyle.regular12TextStyle,
                       ),
                     ],

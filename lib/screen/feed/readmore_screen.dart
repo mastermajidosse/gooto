@@ -86,8 +86,7 @@ class _MoreScreenState extends State<MoreScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(widget.post.place,
-                              style: MyStyle.blacksmallTextStyle),
+                          Text("Morocco", style: MyStyle.blacksmallTextStyle),
                           Text('/person', style: MyStyle.blacksmallTextStyle),
                         ],
                       ),

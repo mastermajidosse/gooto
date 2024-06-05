@@ -2,63 +2,130 @@ import '../models/card.dart';
 
 List<CardModule> cardsList = const [
   CardModule(
-    id: 1,
-    place: 'Dubai',
+    id: 16,
+    place: 'Asilah',
     price: 104,
     isLiked: true,
     desc:
-        'Everything feels extra spectacular in Dubai—from the ultra-modern Burj Khalifa to the souks and malls filled with gold and jewelry vendors. It’s a place where if you can dream it, you can do it: Whether that means skiing indoors, dune-surfing in the desert, or zip-lining above the city. But it’s not all glitz and adrenaline-pumping action. Stroll through the winding alleys of Al Fahidi Historical Neighborhood to see what Dubai was like during the mid-19th century. Or visit the Jumeirah Mosque (one of the few mosques open to non-Muslims) and learn about Emirati culture. Spot some street art on Jumeirah Beach Road and grab a bite at a shawarma shop, or spend the day hunting for spices and perfume then round things out with a Michelin-starred meal. You can really do it all and we’ve got more recs, below.',
-    img:
-        'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/f7/4e/49/dubai.jpg?w=1400&h=500&s=1',
+        'Asilah is an arty little city where brightly colored murals adorn the walls. The old fortified coastal city is a vibrant and fun place where the cultures of both Spain and Morocco fuse.',
+    img: 'https://www.touropia.com/gfx/b/2018/07/asilah.jpg',
   ),
   CardModule(
-    id: 2,
-    place: 'Bali',
-    price: 254,
-    isLiked: true,
-    desc:
-        'Bali packs a lot into one small island— from breathtaking waterfalls like Sekumpul in the north to the white sand beaches of Nyang Nyang in the south. Whatever you’re seeking, you’ll probably find: surf-able waves in Batu Bolong, all-night clubs in Seminyak, luxury clifftop hotels in Nusa Dua, and spiritual refuges all around. Snap a pic at the Gateway to Heaven, cut through the jungle to the hidden Gunung Kawi Temple, and catch the sunset and a traditional fire dance at Uluwatu Temple. Just don’t miss the markets—hunt for handcrafted artwork and textiles at the Sukawati Art Market, or snack on street food staples like satay and bakso at the Sindhu Night Market. For even more tastes and things to do, check out our recs below.',
-    img:
-        'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/b9/ee/23/caption.jpg?w=1400&h=500&s=1',
-  ),
+      id: 22,
+      place: 'Larache',
+      price: 254,
+      isLiked: true,
+      desc:
+          'This chilled-out, summer city is an easy going place that is thronged with domestic tourists during the summer months. Larache’s River Loukas runs slowly through the city and the incredible ruins of Lixus sit nearby, where the legendary Gardens of the Hesperides are said to have been located.The Spanish part of this city is still very much alive – don’t be surprised to stumble across tapas bars and Spanish churches.',
+      img: 'https://www.touropia.com/gfx/b/2018/07/larache.jpg'),
   CardModule(
-    id: 3,
-    place: 'London',
+    id: 30,
+    place: 'Tinghir',
     price: 12,
     isLiked: true,
     desc:
-        'London’s a sprawling city at the center of everything: art, history, culture—you name it. But what sets it apart from other major hubs are its distinct neighborhoods, each with their own vibe. Spend an afternoon with the fam in Kensington: It’s got museums, parks, and plenty of other kid-approved things to do. Or check out edgy Shoreditch for cool shops and street murals (perfect for photo ops), then head to Soho where you can grab a pint at a pub or hit a club and party ‘til dawn. Food’s a big deal here: Yes, there’s fish and chips, but also next-level curry houses thanks to London’s thriving Bangladeshi community (take your pick from tons of spots on Brick Lane), plus a growing roster of celebrity chef-driven restaurants in posh Mayfair. There’s always something new going on and we’ve got more recs, below.',
-    img:
-        'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/f5/de/london.jpg?w=1400&h=500&s=1',
+        'Hugged between the High Atlas Mountains and the beautiful sands of the Sahara, the tantalizing city of Tinghir sits in the middle of the Todra Valley. Tinghir is an old Amazigh town that has grown to become a city overflowing with blooming flower gardens, magnificent Kasbahs and charming narrow streets.Overlooked by the remains of the 18th Century Glaoui Palace, hike up to the top for amazing views of the surrounding areas.',
+    img: 'https://www.touropia.com/gfx/b/2018/07/tinghir.jpg',
   ),
   CardModule(
-    id: 5,
-    place: 'Rome',
+    id: 50,
+    place: 'El Jadida',
     price: 120,
     isLiked: false,
     desc:
-        'It’s easy to see why Rome’s one of the most-visited places on the planet: There’s history everywhere (the Pantheon, the Colosseum, the list goes on), sculptural masterpieces in almost every piazza, and—of course—ridiculously good food. Every trip could feel like a whirlwind, but slow down and you’ll discover lots of surprises. Spend a Sunday morning in Trastevere and hunt for vintage finds at Porta Portese flea market. Or hit San Lorenzo—a student neighborhood with an edgy-but-charming vibe—for trendy shops, galleries, and street art. Dinner’s not ‘til late here, so grab an aperitivo in Prati—it’s walkable from the Vatican and packed with quirky sidestreet bars.Yes, the energy’s next-level, so if you need a break, head for the hills (literally) and check out Aventine Hill, a leafy-green suburb with peaceful gardens and some of the best views of the city. There’s always something to do and we’ve got more recs, below.',
-    img:
-        'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/07/ad/24/caption.jpg?w=1400&h=500&s=1',
+        ' The punchy port city of El Jadida is a popular holiday resort for Moroccan residents. The length of sandy beach here gets busy in the summer months, with families enjoying time off together.The city itself doesn’t have a wealth of character, and can be explored on an easy day trip from Casablanca. Walk around the 16th Century Portuguese Cistern and take in the sites from high up on its ramparts.',
+    img: 'https://www.touropia.com/gfx/b/2018/07/el_jadida.jpg',
   ),
   CardModule(
-    id: 22,
-    place: 'Cancun',
+    id: 82,
+    place: 'Chefchaouen',
     price: 231,
     isLiked: false,
     desc:
         "Cancun’s a pretty well-known spot for spring breakers (and spring breakers at heart)—but its fun-loving spirit, miles of resorts, and nonstop nightlife is only one small part of the story. The city is one of Mexico’s all-around gems—literally made for vacationing. Its velvety beaches are some of the best the Caribbean has to offer, while scuba divers and snorkeling buffs will find plenty of action in the surf—including the Museo Subacuático de Arte, with its more than 500 underwater sculptures. On the outskirts of the city, sites like the pyramids of Chichen Itza give a deep-dive on the area’s sacred Maya heritage.",
-    img:
-        'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/36/d5/e6/20160202-184011-largejpg.jpg?w=1400&h=500&s=1',
+    img: 'https://www.touropia.com/gfx/b/2018/07/chefchaouen.jpg ',
   ),
   CardModule(
-    id: 23,
-    place: 'Hanoi',
+    id: 73,
+    place: 'Tangier',
     price: 133,
     isLiked: true,
     desc:
-        "Despite centuries of French and Chinese influence, Hanoi is a city that’s wholly (and proudly) Vietnamese. But its layered history is everywhere you look—from the Old Quarter with its French colonial buildings to the more than 600 temples and pagodas around the city. You can get right to the history of the city at sites like Hoa Lo Prison or the Ho Chi Minh Mausoleum. Take it all in by foot (or scooter), making time for detours at some of the city’s newer additions: independent art galleries, boutique shops, and trendy cafes. If you’re coming just for the food, you’re not alone. Banh mi and bun cha are obviously musts, but save room for other street food faves: crispy crepes, stir-fried eel, shrimp cakes, and a few frosty beers to wash it all down. For the best of what Hanoi has to offer, get even more recs below.",
-    img:
-        'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/e5/a9/8f/patrimoine-mondial.jpg?w=1400&h=500&s=1',
+        "The gateway to Africa – for Europeans, at least – has a strange and checkered past. The city’s famous International Zone was a magnet for all sorts of bizarre and curious characters, attracting many writers and artists during the 1950’s and 60’s – inspiring numerous novels and songs since.The Tangiers of today still holds on to its fanciful past, and outside influences have affected Tangiers’ aesthetic. But with new business booming and money flowing in, the city has seen much development and is now a fine display of Morocco’s future.",
+    img: "https://www.touropia.com/gfx/b/2018/07/tangier.jpg",
+  ),
+  CardModule(
+    id: 99,
+    place: 'Casablanca',
+    price: 133,
+    isLiked: true,
+    desc:
+        "Everyone knows the city of Casablanca as the colonial setting of the 1942 romantic film, but the city of today doesn’t quite reflect that dreamy, enchanting feeling. Instead, modern-day Casablanca is a trading powerhouse – the importance of the port city means it is Morocco’s economic hub.",
+    img: "https://www.touropia.com/gfx/b/2018/07/casablanca.jpg",
+  ),
+  CardModule(
+    id: 18,
+    place: 'Tetouan',
+    price: 133,
+    isLiked: true,
+    desc:
+        "In the north of the country, the little city of Tetouan – which translates as ‘the water springs’ – sits strikingly at the foot of the Rif Mountains. The city is an important port on the Mediterranean sea and was once the capital of Spanish Morocco.",
+    img: "https://www.touropia.com/gfx/b/2018/07/tetouan-1.jpg",
+  ),
+  CardModule(
+    id: 33,
+    place: 'Agadir',
+    price: 133,
+    isLiked: true,
+    desc: "Busy and bustling, the port city of Agadir is a holiday destination in its own right. After much of Agadir was destroyed following a devastating earthquake in 1960 – especially its most historical parts – the city was rebuilt, and is much less beautiful that Morocco’s many intricate old towns.But Agadir rose from the ashes and became a thriving seaside resort with a chilled out atmosphere to match. The city’s laid-back beachfront promenade is perfect for days spent strolling and enjoying life like the locals. Make sure to stop at one of the food stalls for a snack and chat with some of the city’s friendly inhabitants.",
+    img: "https://www.touropia.com/gfx/b/2018/07/agadir.jpg",
+  ),
+  CardModule(
+    id: 23,
+    place: 'Essaouira',
+    price: 133,
+    isLiked: true,
+    desc: "Essaouira is a serene coastal city with a distinctly European vibe. Once under French protectorate, which led to a fusion of cultures and architectural styles, it saw hippies, musicians, and travelers of the 1960’s moving into the city. As a result, it became accustomed to foreigners, and is now a destination city for travelers wanting to spend some time wandering around the beautiful medina.",
+    img: "https://www.touropia.com/gfx/b/2018/07/essaouira.jpg",
+  ),
+  CardModule(
+    id: 23,
+    place: 'Rabat',
+    price: 133,
+    isLiked: true,
+    desc: "The Moroccan capital of Rabat sits on the banks of the Bouregreg River. It is famous for its incredible Islamic architecture. The city also has strong ties to its French past and – as it lies on the Atlantic coast – has a distinctly European coastal town atmosphere. Rabat’s kasbah is ensconced in the fortified center of the town.",
+    img: "https://www.touropia.com/gfx/b/2018/07/rabat.jpg",
+  ),
+  CardModule(
+    id: 134,
+    place: 'Meknes',
+    price: 133,
+    isLiked: true,
+    desc: "Dating back to the 11th Century, the old city of Meknes was once the capital of imperial Morocco. The Sultan at the time developed the city, building high walls and huge doors to protect it, and creating elaborate and ornate Moorish-Spanish-style buildings.",
+    img: "https://www.touropia.com/gfx/b/2018/07/meknes.jpg",
+  ),
+  CardModule(
+    id: 135,
+    place: 'Ouarzazate',
+    price: 133,
+    isLiked: true,
+    desc: "The gateway to the Sahara Desert, Ouarzazate sits to the south of the High Atlas Mountains. This small and dusty desert city is dominated by the colossal Taourirt Kasbah, a 19th Century fortified palace. The palace boasts amazing views across the mountainous, red landscape. In fact, it is so distinct that has been used in many movies.",
+    img: "https://www.touropia.com/gfx/b/2018/07/ouarzazate.jpg",
+  ),
+  CardModule(
+    id: 136,
+    place: 'Fes',
+    price: 133,
+    isLiked: true,
+    desc: "Once the capital of the Kingdom of Morocco, Fez exudes culture and history. Well-known for its famous small, red hats, the city also has many compelling sites to take in. Fez’s emblematic medina is a huge pedestrianized sprawl that oozes ambience and history. It can seem completely overwhelming to many visitors, whilst others fall in love with the ebullient atmosphere.",
+    img: "https://www.touropia.com/gfx/b/2018/07/fez.jpg",
+  ),
+  CardModule(
+    id: 137,
+    place: 'Marrakech',
+    price: 133,
+    isLiked: true,
+    desc: "One of Morocco’s four Imperial Cities, Marrakech has been a key trading hub for many years. The city’s position is integral to the trade of goods into the country, and its focus on trading has shaped the city. Take a look at the iconic Koutoubia Mosque, which dates back to the 12th Century and is an iconic symbol of the old town – the exquisite 19th Century Bahia Palace also stands out for its lavish design.",
+    img: "https://www.touropia.com/gfx/b/2018/07/marrakech.jpg",
   ),
 ];
