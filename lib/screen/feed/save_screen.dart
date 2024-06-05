@@ -3,9 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:gooto/utils/mystyle.dart';
-import 'package:audioplayers/audioplayers.dart';
-import 'package:readmore/readmore.dart';
-
 import '../../bloc/card_cubit/blog_cubit.dart';
 import '../../bloc/card_cubit/blog_state.dart';
 import '../../models/card_model.dart';
@@ -42,10 +39,10 @@ class _SaveScreenState extends State<SaveScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFFFFFFFF),
-      body: SingleChildScrollView(
-        child: Column(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xFFFFFFFF),
+        body: Column(
           children: [
             Container(
               margin: EdgeInsets.all(20),
@@ -105,51 +102,6 @@ class _SaveScreenState extends State<SaveScreen> {
                 ],
               ),
             ),
-            // Gap(10),
-            // Container(
-            //   height: 45,
-            //   width: 322,
-            //   decoration:
-            //       BoxDecoration(borderRadius: BorderRadius.circular(60)),
-            //   child: TextFormField(
-            //     onFieldSubmitted: (v) {
-            //       print(v);
-            //     },
-            //     decoration: InputDecoration(
-            //       prefixIcon: InkWell(
-            //         onTap: () {
-            //           // Navigator.push(
-            //           //   context,
-            //           //   MaterialPageRoute(
-            //           //     builder: (context) => const SearchScreen(),
-            //           //   ),
-            //           // );
-            //         },
-            //         child: Image.asset(
-            //           'assets/images/search.png',
-            //           height: 24,
-            //           width: 24,
-            //         ),
-            //       ),
-            //       filled: true,
-            //       fillColor: Colors.white,
-            //       contentPadding: const EdgeInsets.only(top: 10),
-            //       border: const OutlineInputBorder(
-            //         borderRadius: BorderRadius.all(Radius.circular(60)),
-            //         borderSide: BorderSide.none,
-            //       ),
-            //       enabledBorder: const OutlineInputBorder(
-            //         borderRadius: BorderRadius.all(Radius.circular(60)),
-            //         borderSide: BorderSide(color: Colors.black38, width: 1),
-            //       ),
-            //       hintText: 'Search...',
-            //       hintStyle: const TextStyle(
-            //         fontWeight: FontWeight.w500,
-            //         fontSize: 17,
-            //       ),
-            //     ),
-            //   ),
-            // ),
             Gap(10),
             BlocBuilder<BlogsTwoCubit, BlogsTwoState>(
               builder: (context, state) {
@@ -165,8 +117,8 @@ class _SaveScreenState extends State<SaveScreen> {
                     }
                     return false;
                   }).toList();
-                  return Container(
-                    height: 700,
+
+                  return Expanded(
                     child: ListView.builder(
                       itemCount: uniqueLikedCards.length,
                       itemBuilder: (ctx, idx) => SavedCardWidget(
@@ -182,19 +134,6 @@ class _SaveScreenState extends State<SaveScreen> {
                 }
               },
             ),
-            // Column(
-            //   children: [
-            //     Container(
-            //       height: 500,
-            //       child: ListView.builder(
-            //         itemBuilder: (ctx, idx) => SavedCardWidget(
-            //           likedBlog: likedBlogs[idx],
-            //         ),
-            //         itemCount: likedBlogs.length,
-            //       ),
-            //     ),
-            //   ],
-            // ),
           ],
         ),
       ),

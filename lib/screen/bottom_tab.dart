@@ -31,7 +31,8 @@ class _BottomTabBarrState extends State<BottomTabBarr> {
   static List _widgetOptions = [
     HomeScreen(),
     SaveScreen(),
-    SettingScreen(),
+    // SettingScreen(),
+    SaveScreen()
   ];
   var provider;
 
