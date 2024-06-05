@@ -87,11 +87,11 @@ class SavedCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(5),
+      margin: EdgeInsets.symmetric(horizontal: 5, vertical: 1),
+      padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border(
-          top: BorderSide(color: Colors.black.withOpacity(0.2), width: 1.0),
           bottom: BorderSide(color: Colors.black.withOpacity(0.2), width: 1.0),
         ),
         boxShadow: [
@@ -106,12 +106,16 @@ class SavedCardWidget extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(37),
-            child: Image.network(
-              likedBlog.img,
-              width: 120,
-              height: 120,
+          Container(
+            height: 130,
+            width: 100,
+            margin: EdgeInsets.all(5),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(likedBlog.img),
+              ),
+              borderRadius: BorderRadius.circular(15),
             ),
           ),
           SizedBox(width: 10),
@@ -126,7 +130,7 @@ class SavedCardWidget extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: ScreenUtil().setSp(20),
-                        color: Colors.black87,
+                        color: Color(0xFF464B84),
                       ),
                     ),
                     Spacer(),
@@ -135,35 +139,35 @@ class SavedCardWidget extends StatelessWidget {
                         Icons.favorite,
                         color:
                             likedBlog.isLiked == 1 ? Colors.red : Colors.grey,
-                        size: 35,
+                        size: 30,
                       ),
                       onPressed: onLike,
                     ),
                   ],
                 ),
-                ReadMoreText(
-                  likedBlog.desc,
-                  trimMode: TrimMode.Line,
-                  trimLines: 2,
-                  colorClickableText: MyStyle.primarycolo,
-                  trimCollapsedText: 'more',
-                  trimExpandedText: 'less',
-                  moreStyle: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600,
-                    color: MyStyle.primarycolo,
-                  ),
-                ),
-                // Text(
+                // ReadMoreText(
                 //   likedBlog.desc,
-                //   maxLines: 3,
-                //   overflow: TextOverflow.ellipsis,
-                //   style: TextStyle(
-                //     fontWeight: FontWeight.bold,
-                //     fontSize: ScreenUtil().setSp(13),
-                //     color: Colors.black87,
+                //   trimMode: TrimMode.Line,
+                //   // trimLines: 2,
+                //   colorClickableText: MyStyle.primarycolo,
+                //   trimCollapsedText: 'more',
+                //   trimExpandedText: 'less',
+                //   moreStyle: TextStyle(
+                //     fontSize: 12,
+                //     fontWeight: FontWeight.w600,
+                //     color: MyStyle.primarycolo,
                 //   ),
                 // ),
+                Text(
+                  likedBlog.desc,
+                  maxLines: 4,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: ScreenUtil().setSp(13),
+                    color: Colors.black87,
+                  ),
+                ),
               ],
             ),
           ),
