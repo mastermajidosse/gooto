@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
             onGenerateRoute: router.RoutGenerator.generateRout,
             initialRoute: router.initialRoute,
             // home: LoginPage(),
-            home: HomeScreen(),
+            // home: HomeScreen(),
             // home: MoreScreen(BlogModel()),
             // home: SaveScreen()
           );

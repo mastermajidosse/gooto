@@ -39,13 +39,12 @@ class _BottomTabBarrState extends State<BottomTabBarr> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
         body: widget.widgetoutside ?? _widgetOptions.elementAt(_selectedIndex),
         bottomNavigationBar: Container(
           height: 50.w,
           width: double.infinity,
           child: BottomAppBar(
-            notchMargin: 4.0,
+            // notchMargin: 4.0,
             color: Colors.white,
             elevation: 1,
             child: Row(
@@ -53,8 +52,8 @@ class _BottomTabBarrState extends State<BottomTabBarr> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 costumcollum(Icons.home, Icons.home_outlined, 0),
-                costumcollum(Icons.favorite, Icons.favorite_outline, 2),
-                costumcollum(Icons.person, Icons.person_outline, 3),
+                costumcollum(Icons.favorite, Icons.favorite_outline, 1),
+                costumcollum(Icons.person, Icons.person_outline, 2),
               ],
             ),
           ),
